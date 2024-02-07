@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>After School Club</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1 v-text="sitename"></h1>
+        </header>
+        <main>
+            <figure>
+                <img v-bind:src="product.image">
+            </figure>
+            <h2 v-text="product.subject"></h2>
+            <p v-html="product.Location"></p>
+            <p>Price: {{product.price}}</p>
+        </main>
+    </div>
+    <script type="text/javascript">
+        let webstore = new Vue({
+            el:'#app',
+            data:{
+                sitename:'After School Club',
+                product:{
+                    id:'001',
+                    subject:'Mathematics',
+                    Location:'Dubai, UAE',
+                    price:'2000 AED',
+                    image:"images/math.jpg",
+                }
+            }
+        })
+    </script>
+</body>
+</html>
